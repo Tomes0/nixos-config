@@ -3,26 +3,29 @@
 {
   # Core desktop services
   services.dbus.implementation = "broker";
-  services.gvfs.enable = true; # Mount, trash, and other functionalities
-  services.tumbler.enable = true; # Thumbnail support for images
+  services.gvfs.enable = true; # For trash, mounts, etc.
+  services.tumbler.enable = true; # Image/video thumbnailing
 
-  # X11 and Display Manager
+  # Display manager (login screen)
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+  #  wayland.enable = true; # Hyprland handles Wayland itself
+  };
+  # services.displayManager.defaultSession = "hyprland-uwsm";
 
-  # Desktop Environments & Window Managers
-  services.desktopManager.plasma6.enable = true;
-  programs.xfconf.enable = true;
+  # Hyprland window manager
   programs.hyprland = {
     enable = true;
-    withUWSM = true;
+    withUWSM = true; # For unified Wayland session management
   };
 
-  # XDG Portals for Wayland/Flatpak integration
+  # XDG portals for Wayland and Flatpak integration
   xdg.portal = {
     enable = true;
+    xdgOpenUsePortal = true;
     extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
       pkgs.xdg-desktop-portal-gtk
     ];
     configPackages = [ pkgs.hyprland ];

@@ -30,8 +30,16 @@
         nixos = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
-            ./configuration.nix
+            #./configuration.nix
             ./hardware-configuration.nix
+            ./modules/core.nix
+            ./modules/boot.nix
+            ./modules/hardware.nix
+            ./modules/networking.nix
+            ./modules/desktop.nix
+            ./modules/graphics.nix
+            ./modules/programs.nix
+            ./modules/packages.nix
           ];
           specialArgs = {
             unstablePkgs = unstablePkgs;

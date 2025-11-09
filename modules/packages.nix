@@ -20,7 +20,7 @@ in
     vscode
     wget
     efibootmgr
-    #kitty
+    kitty
     nixpkgs-fmt
     nixd
     direnv
@@ -75,8 +75,8 @@ in
     icu
 
     micro-full
-    solaar
-    zed-editor
+
+    # zed-editor
     prismlauncher
     librsvg
     stremio
@@ -88,6 +88,9 @@ in
     ffmpeg-full
     mako
     wlogout
-    nixfmt
+    nixfmt-classic
+
+  
+    bottles
   ];
 }
