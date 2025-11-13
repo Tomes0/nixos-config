@@ -64,7 +64,7 @@ in
     wofi
     hyprpaper
     hypridle
-    hyprlock
+    swaylock-effects
     appimage-run
     hyprsysteminfo
     hyprpolkitagent
@@ -92,5 +92,6 @@ in
 
   
     bottles
+    modrinth-app
   ];
 }

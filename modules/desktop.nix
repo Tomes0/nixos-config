@@ -20,6 +20,10 @@
     withUWSM = true; # For unified Wayland session management
   };
 
+
+  # PAM configuration for swaylock
+  security.pam.services.swaylock = { };
+
   # XDG portals for Wayland and Flatpak integration
   xdg.portal = {
     enable = true;

@@ -32,4 +32,5 @@ in
     remotePlay.openFirewall = true;
     extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
+
 }
