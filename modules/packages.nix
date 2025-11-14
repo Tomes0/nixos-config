@@ -39,6 +39,7 @@ in
     wineWowPackages.staging
     unzip
     unstablePkgs.quickshell
+    unstablePkgs.ytmdesktop
 
     # Qt6 related kits（for slove Qt5Compat problem）
     qt6.qt5compat
@@ -92,6 +93,6 @@ in
 
   
     bottles
-    modrinth-app
+    # modrinth-app
   ];
 }
