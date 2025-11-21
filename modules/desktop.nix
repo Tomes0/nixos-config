@@ -10,16 +10,13 @@
   services.xserver.enable = true;
   services.displayManager.sddm = {
     enable = true;
-  #  wayland.enable = true; # Hyprland handles Wayland itself
   };
-  # services.displayManager.defaultSession = "hyprland-uwsm";
 
   # Hyprland window manager
   programs.hyprland = {
     enable = true;
     withUWSM = true; # For unified Wayland session management
   };
-
 
   # PAM configuration for swaylock
   security.pam.services.swaylock = { };
