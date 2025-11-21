@@ -17,6 +17,7 @@ in
 
   # Standard Applications
   programs.kdeconnect.enable = true;
+  services.flatpak.enable = true;
   programs.file-roller.enable = true;
   programs.firefox.enable = true;
   programs.envision = {

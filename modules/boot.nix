@@ -13,7 +13,10 @@
 
   # Kernel settings
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.kernel.sysctl."kernel.unprivileged_userns_clone" = 1;
+  boot.kernelParams = [
+  "i915.enable_dpcd_backlight=1"
+  "acpi_backlight=native"
+];
 
   # These are moved to graphics.nix as they are NVIDIA-specific
   # boot.blacklistedKernelModules = [ "nouveau" ];

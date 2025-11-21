@@ -18,15 +18,14 @@
     NIXOS_OZONE_WL = "1";
     QT_QPA_PLATFORM = "wayland;xcb";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     __NV_PRIME_RENDER_OFFLOAD = "1";
-    __VK_LAYER_NV_optimus = "NVIDIA_only";
   };
 
-    hardware.graphics = {
+  hardware.graphics = {
     enable = true;
     enable32Bit = true;
     extraPackages = with pkgs; [
+      intel-media-driver # Critical for browser HW accel on Intel
       libvdpau-va-gl
       nvidia-vaapi-driver
     ];
@@ -36,7 +35,7 @@
     open = false;
     modesetting.enable = true;
     powerManagement.enable = true;
-    powerManagement.finegrained = true;
+    powerManagement.finegrained = true; # Allows NVIDIA to fully sleep when not in use
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.latest;
     prime = {

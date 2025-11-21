@@ -15,7 +15,6 @@
     enable = true;
     enableUserService = true;
   };
-  hardware.steam-hardware.enable = true;
   services.upower.enable = true;
 
   # Storage and media
