@@ -32,8 +32,8 @@ in
     winetricks
     wineWowPackages.waylandFull
     unzip
-    unstablePkgs.quickshell
-    unstablePkgs.ytmdesktop
+    quickshell
+    ytmdesktop
 
 
     lutris
